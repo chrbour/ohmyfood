@@ -1,0 +1,27 @@
+footer{
+    background-color: $footer-color;
+    color: $texte-blanc;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    & img{
+      justify-content: flex-start;
+      width: 140px;border:red solid 2px;
+      height: 1.5rem;
+      margin: 20px 0;
+    }
+    & img{
+      fill: $texte-blanc;
+    }
+    & .proposer-resto, & .partenaire{
+      display: flex;
+      align-items: center;
+    }
+    & i{
+      margin: 0 10px 0 0;
+    }
+    & p{
+      margin: 5px 0px;
+      font-weight: 400;
+    }
+  }
