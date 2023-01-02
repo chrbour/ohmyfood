@@ -1,0 +1,57 @@
+.container{
+    height: 100vh;
+    width: 400px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.barre{
+    height: 250px;
+    width: 100px;
+    background-color: transparent; 
+    animation: 2s linear rotation infinite both;
+    @for $i from 0 to 10{
+    &--#{$i}{
+        animation-delay: $i*0.2s;
+    }    
+}
+position: absolute;
+}
+.cercle{
+    width: 50px;
+    height: 50px;
+    background-color: $primaryColor;
+    position: absolute;
+    left: 25px;
+    top: 5px;
+    border-radius: 50px;
+    background: linear-gradient(to bottom right, $secondaryColor, $primaryColor);
+    animation: 2s linear grossissement alternate infinite backwards;
+    @for $i from 0 to 10{
+        &--#{$i}{
+            animation-delay: $i*0.2s;   
+        }  
+    } 
+}
+.couverts{
+    color: red/*$primaryColor*/;
+}
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes grossissement{
+    0%{
+        transform: scale(0.4);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

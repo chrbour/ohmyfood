@@ -4,14 +4,10 @@ footer{
     display: flex;
     flex-direction: column;
     padding: 30px 20px;
-    & img{
-      justify-content: flex-start;
-      width: 140px;border:red solid 2px;
-      height: 1.5rem;
+    & h2{
+      font-family: 'Shrikhand', cursive;
+      font: size 1.4rem;
       margin: 20px 0;
-    }
-    & img{
-      fill: $texte-blanc;
     }
     & .proposer-resto, & .partenaire{
       display: flex;
