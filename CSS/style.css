@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* ******************************** Import normalize.scss ********************* */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -308,35 +309,10 @@ template {
   display: none;
 }
 
-/* ******************************** Variables ******************** */
-body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  max-width: 400px;
-  border: solid red 1px;
-  margin: 0 auto;
-}
-
-h1 {
-  font-size: 1.5rem;
-  margin: 20px 0 0 0;
-}
-
-p {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 20px 0px;
-}
-
-.icone {
-  font-size: 1.4rem;
-  margin: 0 20px;
-  color: #7E7E7E;
-}
-
+/* **************************Import variables.scss ***************** */ /* ************************* Loader spinner ************ */
 .container {
+  margin: auto;
   height: 100vh;
-  width: 400px;
   background-color: #FFFFFF;
   display: flex;
   justify-content: center;
@@ -348,7 +324,7 @@ p {
   height: 250px;
   width: 100px;
   background-color: transparent;
-  animation: 2s linear rotation infinite both;
+  animation: 2s linear rotation infinite;
   position: absolute;
 }
 .barre--0 {
@@ -391,7 +367,7 @@ p {
   top: 5px;
   border-radius: 50px;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  animation: 2s linear grossissement alternate infinite backwards;
+  animation: 0.5s linear grossissement alternate infinite backwards;
 }
 .cercle--0 {
   animation-delay: 0s;
@@ -424,10 +400,33 @@ p {
   animation-delay: 1.8s;
 }
 
-.couverts {
-  color: red;
+/* *************************************** Import _base.scss ******************* */
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  max-width: 400px;
+  border: solid red 1px;
+  margin: 0 auto;
 }
 
+h1 {
+  font-size: 1.5rem;
+  margin: 20px 0 0 0;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 20px 0px;
+}
+
+.icone {
+  font-size: 1.4rem;
+  margin: 0 20px;
+  color: #7E7E7E;
+}
+
+/* ******************************** import _animation.scss ************ */
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -444,12 +443,14 @@ p {
     transform: scale(1);
   }
 }
+/* ************************************ Import header.scss ************************ */
 .entete__logo {
   display: flex;
   height: 30px;
   margin: 20px auto;
 }
 
+/* ************************************ Import -footer.scss ********************* */
 footer {
   background-color: #353535;
   color: #FFFFFF;
@@ -583,9 +584,6 @@ nav {
   justify-content: space-between;
   padding: 20px;
 }
-.restaurants__descriptif i {
-  font-size: 1.5rem;
-}
 .restaurants__texte {
   flex-direction: column;
 }
@@ -596,6 +594,36 @@ nav {
 .restaurants__texte p {
   font-weight: 400;
   margin: 0px;
+}
+.restaurants__coeur {
+  font-size: 1.5rem;
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+.restaurants__coeur i:nth-child(1) {
+  position: absolute;
+  opacity: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.restaurants__coeur i:nth-child(2) {
+  position: absolute;
+  transition: 0.5s opacity;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.restaurants__coeur i:nth-child(2):hover {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

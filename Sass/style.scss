@@ -1,9 +1,11 @@
 @import "base/normalize";
 @import "utils/variables";
+@import "components/_loader-spinner";
 @import "base/base";
 @import "base/animation";
 @import "layout/header";
 @import "layout/footer";
+
 /* ************************* Général ******************* */
 .presentation{
   display:flex;
@@ -101,9 +103,6 @@ nav{
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    & i{
-      font-size: 1.5rem;
-    }
   }
   &__texte{
     flex-direction: column;
@@ -114,6 +113,36 @@ nav{
     & p{
       font-weight: 400;
       margin: 0px;
+    }
+  }
+  &__coeur{
+    font-size: 1.5rem;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    & i:nth-child(1){
+      position: absolute;
+      opacity: 1;
+      left:0;
+      right:0;
+      bottom:0;
+      top:0;
+    }
+    & i:nth-child(2){
+      position: absolute;
+      transition: 0.5s opacity;
+      opacity: 0;
+      left:0;
+      right:0;
+      bottom:0;
+      top:0;
+      background: linear-gradient(to bottom right, $secondaryColor, $primaryColor);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    & i:nth-child(2):hover{
+      opacity: 1;
     }
   }
 }
