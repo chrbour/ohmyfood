@@ -1,24 +1,27 @@
 /* ************************* Loader spinner ************ */
-.container{
-    margin: auto;
+.loader-spinner{
+    max-width: 420px;
     height: 100vh;
-    background-color: #FFFFFF;
+    margin: 0;
+    
+    background-color: #FFF;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fade 3s forwards;
     position: relative;
   }
   .barre{
     height: 250px;
     width: 100px;
     background-color: transparent; 
-    animation: 2s linear rotation infinite ;
+    animation: 2s linear rotation infinite;
     @for $i from 0 to 10{
     &--#{$i}{
         animation-delay: $i*0.2s;
     }    
-  }
-  position: absolute;
+    }
+    position: absolute;
   }
   .cercle{
     width: 50px;

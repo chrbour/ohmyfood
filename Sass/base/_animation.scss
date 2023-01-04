@@ -2,7 +2,6 @@
 @keyframes rotation{
     0%{
         transform: rotate(0deg);
-        
     }
     100%{
         transform: rotate(360deg);
@@ -14,5 +13,29 @@
     }
     100%{
         transform: scale(1);
+    }
+}
+@keyframes fade{
+    0%{
+        opacity:1;
+        position: fixed;
+    }
+    80%{
+        opacity:1;
+        position: fixed;
+    }
+    100%{
+        opacity:0;
+    }
+}
+@keyframes cache{
+    0%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

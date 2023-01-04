@@ -1,9 +1,12 @@
 /* *************************************** Import _base.scss ******************* */
-body{
+.page-accueil{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    max-width: 400px;border: solid red 1px;
+    background-color: #FFF;
     margin:0 auto;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
   }
   h1{
     font-size: 1.5rem;

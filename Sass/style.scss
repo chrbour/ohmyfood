@@ -1,12 +1,18 @@
 @import "base/normalize";
 @import "utils/variables";
-@import "components/_loader-spinner";
+@import "components/loader-spinner";
 @import "base/base";
 @import "base/animation";
 @import "layout/header";
 @import "layout/footer";
 
 /* ************************* Général ******************* */
+main{
+  position: absolute; top:0;
+  max-width:420px;
+  animation: cache 3s linear forwards;
+  margin: 0;
+}
 .presentation{
   display:flex;
   flex-direction: column;
@@ -30,9 +36,9 @@
   align-items: center;
   text-align: center;
   background: linear-gradient($texte-blanc,$background);
-  padding: 30px 0px;
+  padding: 30px;
   &__description{
-    font-weight:100;
+    font-weight:300;
   }
 }
 .btnExplorer{
@@ -41,10 +47,15 @@
   font-weight: 700;
   color: $texte-blanc;
   background: linear-gradient(to bottom right, $secondaryColor, $primaryColor);
+  &:hover{
+    background: linear-gradient(to bottom right, $primaryColor, $secondaryColor);
+    cursor: pointer;
+  }
 }
 nav{
   padding: 30px 20px;
 }
+
 .choisissez, .composez, .degustez{
   display: flex;
   flex-direction: row;
@@ -57,6 +68,15 @@ nav{
   font-weight: 700;
   border-radius: 25px;
   position: relative;
+}
+.selection{
+  &:hover{
+    background: $background-hover;
+    cursor: pointer;
+    i{
+      color: $primaryColor;
+    }
+  }
 }
 .chiffre{
   position: absolute;
@@ -81,12 +101,21 @@ nav{
   }
   &__image{
     position: relative;
-    border: 0;margin: 0;padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    height: 180px;
     & img{
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+      position: absolute;
       border-radius: 20px 20px 0 0;
+      object-position: 0 -60px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      &.la-note-enchantee{
+        position: absolute;
+        object-position: 0 -155px;
+      }
     }
     & p{
       position: absolute;
@@ -103,6 +132,7 @@ nav{
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    height: 40px;
   }
   &__texte{
     flex-direction: column;
@@ -116,10 +146,10 @@ nav{
     }
   }
   &__coeur{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     position: relative;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     & i:nth-child(1){
       position: absolute;
       opacity: 1;
@@ -136,13 +166,14 @@ nav{
       right:0;
       bottom:0;
       top:0;
-      background: linear-gradient(to bottom right, $secondaryColor, $primaryColor);
+      background: linear-gradient(to bottom, $primaryColor, $secondaryColor);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
     }
     & i:nth-child(2):hover{
       opacity: 1;
+      cursor: pointer;
     }
   }
 }

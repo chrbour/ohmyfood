@@ -1,5 +1,8 @@
 /* ************************************ Import -footer.scss ********************* */
 footer{
+  /*background-image: url('../../images/logo/ohmyfood.png');
+  background-repeat: no-repeat;
+  background-size: 50px;*/
     background-color: $footer-color;
     color: $texte-blanc;
     display: flex;
@@ -7,8 +10,9 @@ footer{
     padding: 30px 20px;
     & h2{
       font-family: 'Shrikhand', cursive;
-      font: size 1.4rem;
-      margin: 20px 0;
+      font-size: 25px;
+      font-weight: 300;
+      margin: 0 0 20px 0;
     }
     & .proposer-resto, & .partenaire{
       display: flex;
