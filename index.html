@@ -53,8 +53,8 @@
             </div>
             <img class="couverts" src="images/logo/couverts.ico" alt="logo couverts">
         </div>
-        <main>
-            <header>
+        <main class="main-accueil">
+            <header id="topDoc">
                 <img class="entete__logo" src="images/logo/ohmyfood.png" alt="Logo ohmyfood">
             </header>
             <section  class="presentation">           <!-- Page d'accueil -->
@@ -65,7 +65,7 @@
                 <div class="reservez">
                     <h1>Réservez le menu qui<br/>vous convient</h1>
                     <p class="reservez__description">Découvrez des restaurants d'exception,<br/>sélectionnés par nos soins.</p>
-                    <p class="btnExplorer">Explorer nos restaurants</p>
+                    <a href="#restaurants" ><p class="btn">Explorer nos restaurants</p></a>
                 </div>
             </section>
             <nav>
@@ -86,23 +86,25 @@
                     <p>Dégustez au restaurant</p>
                 </div>
             </nav>
-            <section class="restaurants">
+            <section id="restaurants" class="restaurants">
                 <h2>Restaurants</h2>
                 <div class="restaurants__fiche">
-                    <div class="restaurants__image">
-                        <img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Photo La palette du goût">
-                        <p>Nouveau</p>
-                    </div>
-                    <div class="restaurants__descriptif">
-                        <div class="restaurants__texte">
-                            <h3>La palette du goût</h3>
-                            <p>Ménilmontant</p>
+                    <a href="pages/la-palette-du-gout.html">
+                        <div class="restaurants__image">
+                            <img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Photo La palette du goût">
+                            <p>Nouveau</p>
                         </div>
-                        <div class="restaurants__coeur">
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-solid fa-heart"></i>
+                        <div class="restaurants__descriptif">
+                            <div class="restaurants__texte">
+                                <h3>La palette du goût</h3>
+                                <p>Ménilmontant</p>
+                            </div>
+                            <div class="restaurants__coeur">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="restaurants__fiche">
                     <div class="restaurants__image">

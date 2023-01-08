@@ -20,7 +20,7 @@
         opacity:1;
         position: fixed;
     }
-    80%{
+    90%{
         opacity:1;
         position: fixed;
     }
@@ -37,5 +37,14 @@
     }
     100%{
         opacity: 1;
+    }
+}
+@keyframes app-accueil{
+    0%{
+        transform:  translatey(-30px);
+    }
+    
+    100%{
+        transform:  translatey(0px);
     }
 }

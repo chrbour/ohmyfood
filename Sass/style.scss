@@ -6,11 +6,19 @@
 @import "layout/header";
 @import "layout/footer";
 
-/* ************************* Général ******************* */
-main{
-  position: absolute; top:0;
-  max-width:420px;
-  animation: cache 3s linear forwards;
+/* ************************* Page Accueil ******************* */
+.page-accueil{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  background-color: #FFF;
+  margin:0;position: relative;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+}
+.main-accueil{
+  position: absolute;
+  animation: cache 3s linear forwards, app-accueil 0.6s ease 3s both;
   margin: 0;
 }
 .presentation{
@@ -41,21 +49,9 @@ main{
     font-weight:300;
   }
 }
-.btnExplorer{
-  border-radius: 25px;
-  padding: 15px;
-  font-weight: 700;
-  color: $texte-blanc;
-  background: linear-gradient(to bottom right, $secondaryColor, $primaryColor);
-  &:hover{
-    background: linear-gradient(to bottom right, $primaryColor, $secondaryColor);
-    cursor: pointer;
-  }
-}
 nav{
   padding: 30px 20px;
 }
-
 .choisissez, .composez, .degustez{
   display: flex;
   flex-direction: row;
@@ -98,6 +94,11 @@ nav{
     background-color: $texte-blanc;
     border-radius: 20px;
     box-shadow: 2px 2px 5px $ombre;
+    transform: scale(1);
+    transition: transform 0.5s;
+    &:hover{
+      transform: scale(1.03);
+    }
   }
   &__image{
     position: relative;
@@ -132,16 +133,17 @@ nav{
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    height: 40px;
+    height: 50px;
   }
   &__texte{
     flex-direction: column;
     & h3{
       margin: 0px;
       font-size: 1.2rem;
+      height: 25px;
     }
     & p{
-      font-weight: 400;
+      font-weight: 300;
       margin: 0px;
     }
   }

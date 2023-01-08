@@ -1,6 +1,21 @@
 /* ************************************ Import header.scss ************************ */
+header{
+  display: flex;
+  position: relative;
+}
 .entete__logo{
-    display: flex;
     height: 30px;
-    margin: 20px auto;
+    margin: 30px auto 20px;
+}
+.fa-arrow-left{
+  position: absolute;
+  top: 40%;
+  left: 40px;
+  font-size: 22px;
+  font-weight: 900;
+  transform: scale(1);
+  transition: transform 0.5s;
+  &:hover{
+    transform: scale(1.1);
   }
+}

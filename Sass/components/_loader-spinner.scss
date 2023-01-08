@@ -1,9 +1,8 @@
-/* ************************* Loader spinner ************ */
+/* ************************* Import_Loader spinner ************ */
 .loader-spinner{
-    max-width: 420px;
+    max-width: $largeurmax-ecran;
     height: 100vh;
     margin: 0;
-    
     background-color: #FFF;
     display: flex;
     justify-content: center;
