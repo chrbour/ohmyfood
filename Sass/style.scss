@@ -8,10 +8,8 @@
 
 /* ************************* Page Accueil ******************* */
 .page-accueil{
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  background-color: #FFF;
-  margin:0;position: relative;
+  background-color: $blanc;
+  margin:0;
   padding: 0px;
   display: flex;
   justify-content: center;
@@ -36,17 +34,17 @@
 .fa-location-dot{
   margin-right: 15px;
   font-size: 1rem;
-  color: $texte-noir;
+  color: $noir;
 }
 .reservez{
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: linear-gradient($texte-blanc,$background);
+  background: linear-gradient($blanc,$background);
   padding: 30px;
   &__description{
-    font-weight:300;
+    font-weight: 300;
   }
 }
 nav{
@@ -68,6 +66,7 @@ nav{
 .selection{
   &:hover{
     background: $background-hover;
+    box-shadow: 2px 2px 5px $gris;
     cursor: pointer;
     i{
       color: $primaryColor;
@@ -83,7 +82,7 @@ nav{
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
-  color: $texte-blanc;
+  color: $blanc;
   background-color: $primaryColor;
 }
 .restaurants{
@@ -91,13 +90,14 @@ nav{
   padding: 30px 20px;
   &__fiche{
     margin: 20px 0px;
-    background-color: $texte-blanc;
+    background-color: $blanc;
     border-radius: 20px;
     box-shadow: 2px 2px 5px $ombre;
     transform: scale(1);
-    transition: transform 0.5s;
+    transition: transform 0.5s, box-shadow 0.5s;
     &:hover{
       transform: scale(1.03);
+      box-shadow: 2px 2px 5px $gris;
     }
   }
   &__image{
@@ -125,7 +125,7 @@ nav{
       right: 10px;
       padding: 6px;
       margin: 0;
-      color: $texte-vert;
+      color: $vert;
       background-color: $tertiaryColor;
     }
   }
@@ -147,35 +147,119 @@ nav{
       margin: 0px;
     }
   }
-  &__coeur{
-    font-size: 1.8rem;
-    position: relative;
-    width: 30px;
-    height: 30px;
-    & i:nth-child(1){
-      position: absolute;
-      opacity: 1;
-      left:0;
-      right:0;
-      bottom:0;
-      top:0;
+}
+/* ***************************** Page des différents Restaurants ********************* */
+.main-restaurants{
+  display:flex;
+  flex-direction: column;
+  max-width: $largeurmax-ecran; 
+  position: relative;
+}
+.image{
+  height: 250px;
+  & img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.menus{
+  position: absolute;
+  width:100%;
+  top: 200px;
+  background-color: $background;
+  border-radius: 50px 50px 0 0;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  & h1{
+      font-family: 'Shrikhand', cursive;
+      font-size: 28px;
+      font-weight: 300;
+      margin: 0;
+      
     }
-    & i:nth-child(2){
-      position: absolute;
-      transition: 0.5s opacity;
-      opacity: 0;
-      left:0;
-      right:0;
-      bottom:0;
-      top:0;
-      background: linear-gradient(to bottom, $primaryColor, $secondaryColor);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+    & h2{
+      font-size: 18px;
+      font-weight: 400;
+      height: 22px;
+      width: 45px;
+      margin: 30px 0 10px;
+      border-bottom: 5px solid $tertiaryColor;
     }
-    & i:nth-child(2):hover{
-      opacity: 1;
+    & h3{
+      font-size: 1.15rem;
+      padding: 0;
+      margin: 10px 10px 5px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  &__nom{
+    display: flex;
+    justify-content: space-between;
+    padding-right:20px;
+  }
+  &__element{
+    display: flex;
+    background-color: $blanc;
+    border-radius: 20px;
+    margin-bottom: 20px;   
+    box-shadow: 0 0 12px $ombre;
+    &:hover{
       cursor: pointer;
+      .element__name{
+        display:flex;
+        width: 80%;
+      }
+      .element__validation{
+        width: 20%;
+        i{
+          animation: rotation 0.5s backwards;
+        }
+      }
     }
   }
+  .btn{
+    margin: 40px auto 20px;
+    width: 150px;
+    text-align: center;
+  }
+}
+.element{
+  &__name{
+    width: 100%;
+    display: flex;
+    padding: 5px 5px 0;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: width 0.5s;
+  }
+  &__detail{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__validation{
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    font-size: 25px;
+    width: 0%;
+    transition: width 0.5s;
+    background-color: $tertiaryColor;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    i{
+      color: $blanc;
+    }
+  }
+}
+.intitule{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 400;
+  margin: 0 10px 10px;
+}
+.prix{
+  padding: 0;
+  margin: 0 10px;
 }

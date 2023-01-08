@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ******************************** Import normalize.scss ********************* */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -313,7 +314,7 @@ template {
   max-width: 420px;
   height: 100vh;
   margin: 0;
-  background-color: #FFF;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -408,7 +409,11 @@ html {
 
 body {
   max-width: 420px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
 h1 {
@@ -439,11 +444,43 @@ a {
   font-weight: 700;
   color: #FFFFFF;
   box-shadow: 0px 5px 5px #E9E9E9;
-  scroll-behavior: smooth;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
 }
 .btn:hover {
-  background: linear-gradient(to bottom right, #9356DC, #FF79DA);
+  filter: brightness(1.2);
+  box-shadow: 0 5px 5px #7E7E7E;
+  cursor: pointer;
+}
+
+.coeur {
+  font-size: 1.8rem;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.coeur i:nth-child(1) {
+  position: absolute;
+  opacity: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.coeur i:nth-child(2) {
+  position: absolute;
+  transition: 0.5s opacity;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: linear-gradient(to bottom, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.coeur i:nth-child(2):hover {
+  opacity: 1;
   cursor: pointer;
 }
 
@@ -514,10 +551,10 @@ header {
   font-size: 22px;
   font-weight: 900;
   transform: scale(1);
-  transition: transform 0.5s;
+  transition: transform 0.3s;
 }
 .fa-arrow-left:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 /* ************************************ Import -footer.scss ********************* */
@@ -526,7 +563,7 @@ footer {
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
-  padding: 30px 20px;
+  padding: 30px 30px;
 }
 footer h2 {
   font-family: "Shrikhand", cursive;
@@ -546,13 +583,16 @@ footer p {
   font-weight: 400;
 }
 
+.footer-restaurants {
+  position: relative;
+  top: 1140px;
+  z-index: 1;
+}
+
 /* ************************* Page Accueil ******************* */
 .page-accueil {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  background-color: #FFF;
+  background-color: #FFFFFF;
   margin: 0;
-  position: relative;
   padding: 0px;
   display: flex;
   justify-content: center;
@@ -616,6 +656,7 @@ nav {
 
 .selection:hover {
   background: #F5EDFF;
+  box-shadow: 2px 2px 5px #7E7E7E;
   cursor: pointer;
 }
 .selection:hover i {
@@ -645,10 +686,11 @@ nav {
   border-radius: 20px;
   box-shadow: 2px 2px 5px #E9E9E9;
   transform: scale(1);
-  transition: transform 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s;
 }
 .restaurants__fiche:hover {
   transform: scale(1.03);
+  box-shadow: 2px 2px 5px #7E7E7E;
 }
 .restaurants__image {
   position: relative;
@@ -697,36 +739,123 @@ nav {
   font-weight: 300;
   margin: 0px;
 }
-.restaurants__coeur {
-  font-size: 1.8rem;
+
+/* ***************************** Page des différents Restaurants ********************* */
+.main-restaurants {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
   position: relative;
-  width: 30px;
-  height: 30px;
 }
-.restaurants__coeur i:nth-child(1) {
+
+.image {
+  height: 250px;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+}
+
+.menus {
   position: absolute;
-  opacity: 1;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
+  width: 100%;
+  top: 200px;
+  background-color: #F7F7F7;
+  border-radius: 50px 50px 0 0;
+  padding: 30px 20px;
+  box-sizing: border-box;
 }
-.restaurants__coeur i:nth-child(2) {
-  position: absolute;
-  transition: 0.5s opacity;
-  opacity: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background: linear-gradient(to bottom, #9356DC, #FF79DA);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+.menus h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 28px;
+  font-weight: 300;
+  margin: 0;
 }
-.restaurants__coeur i:nth-child(2):hover {
-  opacity: 1;
+.menus h2 {
+  font-size: 18px;
+  font-weight: 400;
+  height: 22px;
+  width: 45px;
+  margin: 30px 0 10px;
+  border-bottom: 5px solid #99E2D0;
+}
+.menus h3 {
+  font-size: 1.15rem;
+  padding: 0;
+  margin: 10px 10px 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menus__nom {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+.menus__element {
+  display: flex;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 12px #E9E9E9;
+}
+.menus__element:hover {
   cursor: pointer;
+}
+.menus__element:hover .element__name {
+  display: flex;
+  width: 80%;
+}
+.menus__element:hover .element__validation {
+  width: 20%;
+}
+.menus__element:hover .element__validation i {
+  animation: rotation 0.5s backwards;
+}
+.menus .btn {
+  margin: 40px auto 20px;
+  width: 150px;
+  text-align: center;
+}
+
+.element__name {
+  width: 100%;
+  display: flex;
+  padding: 5px 5px 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: width 0.5s;
+}
+.element__detail {
+  display: flex;
+  justify-content: space-between;
+}
+.element__validation {
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  font-size: 25px;
+  width: 0%;
+  transition: width 0.5s;
+  background-color: #99E2D0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.element__validation i {
+  color: #FFFFFF;
+}
+
+.intitule {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 400;
+  margin: 0 10px 10px;
+}
+
+.prix {
+  padding: 0;
+  margin: 0 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

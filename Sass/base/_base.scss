@@ -3,8 +3,11 @@ html{
   scroll-behavior: smooth;
 }   
 body{
-  max-width: $largeurmax-ecran;
+  max-width: $largeurmax-ecran;display:flex;
+  flex-direction: column;
   margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 h1{
   font-size: 1.5rem;
@@ -22,17 +25,49 @@ a{
 .icone{
   font-size: 1.4rem;
   margin: 0 20px;
-  color: $texte-gris;
+  color: $gris;
 }
 .btn{
   border-radius: 25px;
   padding: 15px;
   font-weight: 700;
-  color: $texte-blanc;
-  box-shadow: 0px 5px 5px $ombre;scroll-behavior: smooth;
+  color: $blanc;
+  box-shadow: 0px 5px 5px $ombre;
   background: linear-gradient(to bottom right, $secondaryColor, $primaryColor);
   &:hover{
-    background: linear-gradient(to bottom right, $primaryColor, $secondaryColor);
+    filter: brightness(1.2);
+    box-shadow: 0 5px 5px $gris;
+    cursor: pointer;
+  }
+}
+.coeur{
+  font-size: 1.8rem;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  & i:nth-child(1){
+    position: absolute;
+    opacity: 1;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+  }
+  & i:nth-child(2){
+    position: absolute;
+    transition: 0.5s opacity;
+    opacity: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    background: linear-gradient(to bottom, $primaryColor, $secondaryColor);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  & i:nth-child(2):hover{
+    opacity: 1;
     cursor: pointer;
   }
 }
