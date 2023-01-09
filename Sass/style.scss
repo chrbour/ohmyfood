@@ -158,9 +158,16 @@ nav{
 .image{
   height: 250px;
   & img{
+    position: absolute;
     width: 100%;
-    height: 100%;
   }
+}
+.a-la-française, .la-palette-du-gout{
+  height: 100%;
+}
+.resto-la-note-enchantee{
+  position: absolute;
+  top: -110px;
 }
 .menus{
   position: absolute;

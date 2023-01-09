@@ -537,6 +537,8 @@ a {
 header {
   display: flex;
   position: relative;
+  background-color: #FFFFFF;
+  z-index: 1;
 }
 
 .entete__logo {
@@ -586,7 +588,11 @@ footer p {
 .footer-restaurants {
   position: relative;
   top: 1140px;
-  z-index: 1;
+}
+
+.footer-laNoteEnchantee {
+  position: relative;
+  top: 1220px;
 }
 
 /* ************************* Page Accueil ******************* */
@@ -752,8 +758,17 @@ nav {
   height: 250px;
 }
 .image img {
+  position: absolute;
   width: 100%;
+}
+
+.a-la-française, .la-palette-du-gout {
   height: 100%;
+}
+
+.resto-la-note-enchantee {
+  position: absolute;
+  top: -110px;
 }
 
 .menus {
