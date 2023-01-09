@@ -311,6 +311,7 @@ template {
 
 /* **************************Import variables.scss ***************** */ /* ************************* Import_Loader spinner ************ */
 .loader-spinner {
+  overflow: visible;
   max-width: 420px;
   height: 100vh;
   margin: 0;
@@ -323,11 +324,11 @@ template {
 }
 
 .barre {
+  position: absolute;
   height: 250px;
   width: 100px;
   background-color: transparent;
   animation: 2s linear rotation infinite;
-  position: absolute;
 }
 .barre--0 {
   animation-delay: 0s;
@@ -525,12 +526,28 @@ a {
     opacity: 1;
   }
 }
-@keyframes app-accueil {
+@keyframes descente {
   0% {
-    transform: translatey(-30px);
+    transform: translateY(-30px);
   }
   100% {
-    transform: translatey(0px);
+    transform: translateY(0px);
+  }
+}
+@keyframes montee {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes apparitionProgressive {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
   }
 }
 /* ************************************ Import header.scss ************************ */
@@ -587,7 +604,7 @@ footer p {
 
 .footer-restaurants {
   position: relative;
-  top: 1140px;
+  top: 1130px;
 }
 
 .footer-laNoteEnchantee {
@@ -606,7 +623,7 @@ footer p {
 
 .main-accueil {
   position: absolute;
-  animation: cache 3s linear forwards, app-accueil 0.6s ease 3s both;
+  animation: cache 3s linear forwards, descente 0.6s ease 3s both;
   margin: 0;
 }
 
@@ -714,7 +731,6 @@ nav {
   object-fit: cover;
 }
 .restaurants__image img.la-note-enchantee {
-  position: absolute;
   object-position: 0 -155px;
 }
 .restaurants__image p {
@@ -747,15 +763,22 @@ nav {
 }
 
 /* ***************************** Page des différents Restaurants ********************* */
+.header-restaurants, .footer-restaurants, .footer-laNoteEnchantee {
+  animation: apparitionProgressive 2s;
+}
+
 .main-restaurants {
   display: flex;
   flex-direction: column;
   max-width: 420px;
   position: relative;
+  animation: apparitionProgressive 2s;
 }
 
 .image {
   height: 250px;
+  position: relative;
+  overflow: hidden;
 }
 .image img {
   position: absolute;
@@ -769,6 +792,11 @@ nav {
 .resto-la-note-enchantee {
   position: absolute;
   top: -110px;
+}
+
+.resto-le-delice-des-sens {
+  position: absolute;
+  top: -20px;
 }
 
 .menus {
@@ -813,6 +841,36 @@ nav {
   border-radius: 20px;
   margin-bottom: 20px;
   box-shadow: 0 0 12px #E9E9E9;
+}
+.menus__element.element1 {
+  animation: apparitionProgressive 0.5s 0.2s both, montee 0.5s 0.2s both;
+}
+.menus__element.element2 {
+  animation: apparitionProgressive 0.5s 0.4s both, montee 0.5s 0.4s both;
+}
+.menus__element.element3 {
+  animation: apparitionProgressive 0.5s 0.6s both, montee 0.5s 0.6s both;
+}
+.menus__element.element4 {
+  animation: apparitionProgressive 0.5s 0.8s both, montee 0.5s 0.8s both;
+}
+.menus__element.element5 {
+  animation: apparitionProgressive 0.5s 1s both, montee 0.5s 1s both;
+}
+.menus__element.element6 {
+  animation: apparitionProgressive 0.5s 1.2s both, montee 0.5s 1.2s both;
+}
+.menus__element.element7 {
+  animation: apparitionProgressive 0.5s 1.4s both, montee 0.5s 1.4s both;
+}
+.menus__element.element8 {
+  animation: apparitionProgressive 0.5s 1.6s both, montee 0.5s 1.6s both;
+}
+.menus__element.element9 {
+  animation: apparitionProgressive 0.5s 1.8s both, montee 0.5s 1.8s both;
+}
+.menus__element.element10 {
+  animation: apparitionProgressive 0.5s 2s both, montee 0.5s 2s both;
 }
 .menus__element:hover {
   cursor: pointer;

@@ -16,7 +16,7 @@
 }
 .main-accueil{
   position: absolute;
-  animation: cache 3s linear forwards, app-accueil 0.6s ease 3s both;
+  animation: cache 3s linear forwards, descente 0.6s ease 3s both;
   margin: 0;
 }
 .presentation{
@@ -114,7 +114,6 @@ nav{
       height: 100%;
       object-fit: cover;
       &.la-note-enchantee{
-        position: absolute;
         object-position: 0 -155px;
       }
     }
@@ -149,14 +148,20 @@ nav{
   }
 }
 /* ***************************** Page des différents Restaurants ********************* */
+.header-restaurants, .footer-restaurants, .footer-laNoteEnchantee{
+  animation: apparitionProgressive $tpsApparitionProgressive;
+}
 .main-restaurants{
   display:flex;
   flex-direction: column;
   max-width: $largeurmax-ecran; 
   position: relative;
+  animation: apparitionProgressive $tpsApparitionProgressive;
 }
 .image{
   height: 250px;
+  position: relative;
+  overflow: hidden;
   & img{
     position: absolute;
     width: 100%;
@@ -168,6 +173,10 @@ nav{
 .resto-la-note-enchantee{
   position: absolute;
   top: -110px;
+}
+.resto-le-delice-des-sens{
+  position: absolute;
+  top: -20px;
 }
 .menus{
   position: absolute;
@@ -211,6 +220,12 @@ nav{
     border-radius: 20px;
     margin-bottom: 20px;   
     box-shadow: 0 0 12px $ombre;
+    @for $i from 1 to 11{
+      &.element#{$i}{
+        animation: apparitionProgressive 0.5s $i*0.2s both, montee 0.5s $i*0.2s both;
+        
+      }
+    }
     &:hover{
       cursor: pointer;
       .element__name{
