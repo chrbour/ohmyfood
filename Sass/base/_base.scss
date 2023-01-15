@@ -20,7 +20,10 @@ p{
 }
 a{
   text-decoration: none;
-  color: #000;
+  color: $noir;
+}
+footer a{
+  color: $blanc;
 }
 .icone{
   font-size: 1.4rem;

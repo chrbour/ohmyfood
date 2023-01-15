@@ -118,7 +118,11 @@ p {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #000000;
+}
+
+footer a {
+  color: #FFFFFF;
 }
 
 .icone {
@@ -450,6 +454,58 @@ nav {
   margin: 0px;
 }
 
+@media screen and (min-width: 992px) { /* ************ Version Desktop ****************** */
+  .reservez {
+    padding: 10px;
+  }
+  .reservez p {
+    margin: 0 0 20px;
+  }
+  .reservez h1 {
+    margin: 10px 0;
+  }
+  br {
+    display: none;
+  }
+  .choix {
+    display: flex;
+    justify-content: center;
+  }
+  .selection {
+    width: 300px;
+    margin: 0 2%;
+  }
+  .restos {
+    display: flex;
+  }
+  .restaurants__fiche {
+    width: 24%;
+    margin: 0 5px;
+  }
+  .restaurants__image {
+    display: flex;
+  }
+  .restaurants__image img {
+    object-position: 0;
+  }
+  .restaurants__image img.la-note-enchantee {
+    object-position: 0;
+  }
+  h3 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .mentions {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) { /* *************** Version tablette ************* */
+  p {
+    color: green;
+  }
+}
 /* ***************************** Import Page des différents Restaurants ********************* */
 .header-restaurants, .footer-restaurants, .footer-laNoteEnchantee {
   animation: apparitionProgressive 2s;
