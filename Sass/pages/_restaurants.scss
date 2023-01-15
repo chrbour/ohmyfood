@@ -1,0 +1,138 @@
+/* ***************************** Import Page des différents Restaurants ********************* */
+.header-restaurants, .footer-restaurants, .footer-laNoteEnchantee{
+    animation: apparitionProgressive $tpsApparitionProgressive;
+  }
+  .main-restaurants{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    animation: apparitionProgressive $tpsApparitionProgressive;
+  }
+  .image{
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    & img{
+      position: absolute;
+      width: 100%;
+    }
+  }
+  .a-la-française, .la-palette-du-gout{
+    height: 100%;
+  }
+  .resto-la-note-enchantee{
+    position: absolute;
+    top: -110px;
+  }
+  .resto-le-delice-des-sens{
+    position: absolute;
+    top: -20px;
+  }
+  .menus{
+    position: absolute;
+    width:100%;
+    top: 200px;
+    background-color: $background;
+    border-radius: 50px 50px 0 0;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    & h1{
+        font-family: 'Shrikhand', cursive;
+        font-size: 28px;
+        font-weight: 300;
+        margin: 0;
+        
+      }
+      & h2{
+        font-size: 18px;
+        font-weight: 400;
+        height: 22px;
+        width: 45px;
+        margin: 30px 0 10px;
+        border-bottom: 5px solid $tertiaryColor;
+      }
+      & h3{
+        font-size: 1.15rem;
+        padding: 0;
+        margin: 10px 10px 5px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    &__nom{
+      display: flex;
+      justify-content: space-between;
+      padding-right:20px;
+    }
+    &__element{
+      display: flex;
+      background-color: $blanc;
+      border-radius: 20px;
+      margin-bottom: 20px;   
+      box-shadow: 0 0 12px $ombre;
+      @for $i from 1 to 11{
+        &.element#{$i}{
+          animation: apparitionProgressive 0.5s $i*0.2s both, montee 0.5s $i*0.2s both;
+          
+        }
+      }
+      &:hover{
+        cursor: pointer;
+        .element__name{
+          display:flex;
+          width: 80%;
+        }
+        .element__validation{
+          width: 20%;
+          i{
+            animation: rotation 0.5s backwards;
+          }
+        }
+      }
+    }
+    .btn{
+      margin: 40px auto 20px;
+      width: 150px;
+      text-align: center;
+    }
+  }
+  .element{
+    &__name{
+      width: 100%;
+      display: flex;
+      padding: 5px 5px 0;
+      flex-direction: column;
+      box-sizing: border-box;
+      transition: width 0.5s;
+    }
+    &__detail{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__validation{
+      border-radius: 0 20px 20px 0;
+      display: flex;
+      font-size: 25px;
+      width: 0%;
+      transition: width 0.5s;
+      background-color: $tertiaryColor;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      i{
+        color: $blanc;
+      }
+    }
+  }
+  .intitule{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 400;
+    margin: 0 10px 10px;
+  }
+  .prix{
+    padding: 0;
+    margin: 0 10px;
+  }
+  

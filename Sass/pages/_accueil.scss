@@ -1,0 +1,141 @@
+/* ************************* Import Page Accueil ******************* */
+.page-accueil{
+    background-color: $blanc;
+    display: flex;
+    justify-content: center;
+  }
+  .main-accueil{
+    position: absolute;
+    animation: cache 3s linear forwards, descente 0.6s ease 3s both;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .presentation{
+    display:flex;
+    flex-direction: column;
+  }
+  .localisation{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $localisation;
+    border-top: 4px solid $localisation_bordure;
+  }
+  .fa-location-dot{
+    margin-right: 15px;
+    font-size: 1rem;
+    color: $noir;
+  }
+  .reservez{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient($blanc,$background);
+    padding: 30px;
+    &__description{
+      font-weight: 300;
+    }
+  }
+  nav{
+    padding: 30px 20px;
+  }
+  .choisissez, .composez, .degustez{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px 0px 20px 15px;
+    font-size: 1.2rem;
+    background: $background;
+    box-shadow: 2px 2px 5px $ombre;
+    font-weight: 700;
+    border-radius: 25px;
+    position: relative;
+  }
+  .selection{
+    &:hover{
+      background: $background-hover;
+      box-shadow: 2px 2px 5px $gris;
+      cursor: pointer;
+      i{
+        color: $primaryColor;
+      }
+    }
+  }
+  .chiffre{
+    position: absolute;
+    left: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: $blanc;
+    background-color: $primaryColor;
+  }
+  .restaurants{
+    background-color: $background;
+    padding: 30px 20px;
+    &__fiche{
+      margin: 20px 0px;
+      background-color: $blanc;
+      border-radius: 20px;
+      box-shadow: 2px 2px 5px $ombre;
+      transform: scale(1);
+      transition: transform 0.5s, box-shadow 0.5s;
+      &:hover{
+        transform: scale(1.03);
+        box-shadow: 2px 2px 5px $gris;
+      }
+    }
+    &__image{
+      position: relative;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      height: 180px;
+      & img{
+        position: absolute;
+        border-radius: 20px 20px 0 0;
+        object-position: 0 -60px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        &.la-note-enchantee{
+          object-position: 0 -155px;
+        }
+      }
+      & p{
+        position: absolute;
+        font-size: 1rem;
+        top: 10px;
+        right: 10px;
+        padding: 6px;
+        margin: 0;
+        color: $vert;
+        background-color: $tertiaryColor;
+      }
+    }
+    &__descriptif{
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      height: 50px;
+    }
+    &__texte{
+      flex-direction: column;
+      & h3{
+        margin: 0px;
+        font-size: 1.2rem;
+        height: 25px;
+      }
+      & p{
+        font-weight: 300;
+        margin: 0px;
+      }
+    }
+  }
