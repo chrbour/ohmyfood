@@ -3,9 +3,9 @@ html{
   scroll-behavior: smooth;
 }   
 body{
-  max-width: $largeurmax-ecran;display:flex;
+  display:flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }

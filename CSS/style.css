@@ -312,7 +312,6 @@ template {
 /* **************************Import variables.scss ***************** */ /* ************************* Import_Loader spinner ************ */
 .loader-spinner {
   overflow: visible;
-  max-width: 420px;
   height: 100vh;
   margin: 0;
   background-color: #FFFFFF;
@@ -409,10 +408,9 @@ html {
 }
 
 body {
-  max-width: 420px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
@@ -615,8 +613,6 @@ footer p {
 /* ************************* Page Accueil ******************* */
 .page-accueil {
   background-color: #FFFFFF;
-  margin: 0;
-  padding: 0px;
   display: flex;
   justify-content: center;
 }
@@ -624,7 +620,9 @@ footer p {
 .main-accueil {
   position: absolute;
   animation: cache 3s linear forwards, descente 0.6s ease 3s both;
+  width: 100%;
   margin: 0;
+  padding: 0;
 }
 
 .presentation {
@@ -770,7 +768,6 @@ nav {
 .main-restaurants {
   display: flex;
   flex-direction: column;
-  max-width: 420px;
   position: relative;
   animation: apparitionProgressive 2s;
 }
