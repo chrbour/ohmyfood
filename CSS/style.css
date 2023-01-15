@@ -478,8 +478,16 @@ nav {
   .restos {
     display: flex;
   }
+  .restos1 {
+    display: flex;
+    width: 50%;
+  }
+  .restos2 {
+    display: flex;
+    width: 50%;
+  }
   .restaurants__fiche {
-    width: 24%;
+    width: 50%;
     margin: 0 5px;
   }
   .restaurants__image {
@@ -498,12 +506,72 @@ nav {
   }
   .mentions {
     display: flex;
-    justify-content: space-evenly;
+  }
+  .mentions1 {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    padding: 0 100px 0 150px;
+  }
+  .mentions2 {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    padding: 0 150px 0 100px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 991px) { /* *************** Version tablette ************* */
-  p {
-    color: green;
+@media screen and (min-width: 768px) and (max-width: 991px) { /* *************** Version Tablette ************* */
+  .reservez {
+    padding: 10px;
+  }
+  .reservez p {
+    margin: 0 0 20px;
+  }
+  .reservez h1 {
+    margin: 10px 0;
+  }
+  br {
+    display: none;
+  }
+  .selection {
+    width: 300px;
+  }
+  .choix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .restos {
+    display: flex;
+    flex-direction: column;
+  }
+  .restos1 {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .restos2 {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .restaurants__fiche {
+    width: 40%;
+  }
+  .restaurants__fiche {
+    width: 40%;
+    margin: 10px 0;
+  }
+  .restaurants__image {
+    display: flex;
+  }
+  .restaurants__image img {
+    object-position: 0;
+  }
+  .restaurants__image img.la-note-enchantee {
+    object-position: 0;
+  }
+  .mentions {
+    display: flex;
+    justify-content: space-evenly;
   }
 }
 /* ***************************** Import Page des différents Restaurants ********************* */
