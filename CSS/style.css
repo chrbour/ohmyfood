@@ -209,10 +209,10 @@ footer a {
 }
 @keyframes cache {
   0% {
-    opacity: 0;
+    opacity: 0.17;
   }
   90% {
-    opacity: 0;
+    opacity: 0.17;
   }
   100% {
     opacity: 1;
