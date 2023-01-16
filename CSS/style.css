@@ -731,11 +731,40 @@ nav {
   margin: 0 10px;
 }
 
-@media screen and (min-width: 992px) { /* ******************** Version Desktop **************** */ }
-@media screen and (min-width: 768px) and (max-width: 991px) { /* ********** Version Tablette *************** */
-  p {
-    color: green;
+@media screen and (min-width: 992px) { /* ******************** Version Desktop **************** */
+  .main-restaurants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #7E7E7E;
   }
+  .image {
+    width: 30%;
+    align-items: flex-end;
+  }
+  .menus {
+    position: static;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .menus__entrees, .menus__plats, .menus__desserts {
+    margin: 0 5px;
+    width: 30%;
+  }
+  .repas {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-restaurants, .footer-laNoteEnchantee {
+    position: static;
+  }
+  .mentions-restaurants {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) { /* ********** Version Tablette *************** */
   .main-restaurants {
     width: 600px;
     margin: 0 auto;
