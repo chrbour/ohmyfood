@@ -191,20 +191,9 @@
         white-space: nowrap;
         text-overflow: ellipsis;
     }
-    .mentions{
+    .mentions-accueil{
         display: flex;
-    }
-    .mentions1{
-        display: flex;
-        width: 50%;
-        justify-content: space-between;
-        padding: 0 100px 0 150px;
-    }
-    .mentions2{
-        display: flex;
-        width: 50%; 
-        justify-content: space-between;
-        padding: 0 150px 0 100px;
+        justify-content: space-evenly;
     }
   }
   @media screen and (min-width: 768px) and (max-width: 991px){        /* *************** Version Tablette ************* */
@@ -258,7 +247,7 @@
             }
         }
     }
-    .mentions{
+    .mentions-accueil{
         display: flex;
         justify-content: space-evenly;
     }

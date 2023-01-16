@@ -504,20 +504,9 @@ nav {
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .mentions {
+  .mentions-accueil {
     display: flex;
-  }
-  .mentions1 {
-    display: flex;
-    width: 50%;
-    justify-content: space-between;
-    padding: 0 100px 0 150px;
-  }
-  .mentions2 {
-    display: flex;
-    width: 50%;
-    justify-content: space-between;
-    padding: 0 150px 0 100px;
+    justify-content: space-evenly;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) { /* *************** Version Tablette ************* */
@@ -569,7 +558,7 @@ nav {
   .restaurants__image img.la-note-enchantee {
     object-position: 0;
   }
-  .mentions {
+  .mentions-accueil {
     display: flex;
     justify-content: space-evenly;
   }
@@ -740,6 +729,21 @@ nav {
 .prix {
   padding: 0;
   margin: 0 10px;
+}
+
+@media screen and (min-width: 992px) { /* ******************** Version Desktop **************** */ }
+@media screen and (min-width: 768px) and (max-width: 991px) { /* ********** Version Tablette *************** */
+  p {
+    color: green;
+  }
+  .main-restaurants {
+    width: 600px;
+    margin: 0 auto;
+  }
+  .mentions-restaurants {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
