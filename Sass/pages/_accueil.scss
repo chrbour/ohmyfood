@@ -81,7 +81,8 @@
     background-color: $background;
     padding: 30px 20px;
     &__fiche{
-      margin: 20px 0px;
+      margin: 20px auto;
+      max-width: 500px;
       background-color: $blanc;
       border-radius: 20px;
       box-shadow: 2px 2px 5px $ombre;
@@ -172,7 +173,7 @@
     .restaurants{
         &__fiche{
             width: 50%;
-            margin: 0 5px;
+            margin: 0 10px;
         }
         &__image{
             display: flex;
@@ -188,10 +189,6 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-    }
-    .mentions-accueil{
-        display: flex;
-        justify-content: space-evenly;
     }
   }
   @media screen and (min-width: 768px) and (max-width: 991px){        /* *************** Version Tablette ************* */
@@ -248,9 +245,5 @@
               }
             }
         }
-    }
-    .mentions-accueil{
-        display: flex;
-        justify-content: space-evenly;
     }
   }

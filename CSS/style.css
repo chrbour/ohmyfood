@@ -247,7 +247,6 @@ header {
   display: flex;
   position: relative;
   background-color: #FFFFFF;
-  z-index: 1;
 }
 
 .entete__logo {
@@ -275,6 +274,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 30px 30px;
+  width: 100%;
 }
 footer h2 {
   font-family: "Shrikhand", cursive;
@@ -292,16 +292,6 @@ footer i {
 footer p {
   margin: 5px 0px;
   font-weight: 400;
-}
-
-.footer-restaurants {
-  position: relative;
-  top: 1130px;
-}
-
-.footer-laNoteEnchantee {
-  position: relative;
-  top: 1220px;
 }
 
 /* ************************* Import Page Accueil ******************* */
@@ -396,7 +386,8 @@ nav {
   padding: 30px 20px;
 }
 .restaurants__fiche {
-  margin: 20px 0px;
+  margin: 20px auto;
+  max-width: 500px;
   background-color: #FFFFFF;
   border-radius: 20px;
   box-shadow: 2px 2px 5px #E9E9E9;
@@ -486,7 +477,7 @@ nav {
   }
   .restaurants__fiche {
     width: 50%;
-    margin: 0 5px;
+    margin: 0 10px;
   }
   .restaurants__image {
     display: flex;
@@ -501,10 +492,6 @@ nav {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-  }
-  .mentions-accueil {
-    display: flex;
-    justify-content: space-evenly;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) { /* *************** Version Tablette ************* */
@@ -560,10 +547,6 @@ nav {
   .restaurants__image img.la-note-enchantee {
     object-position: 0;
   }
-  .mentions-accueil {
-    display: flex;
-    justify-content: space-evenly;
-  }
 }
 /* ***************************** Import Page des différents Restaurants ********************* */
 .header-restaurants, .footer-restaurants, .footer-laNoteEnchantee {
@@ -588,7 +571,7 @@ nav {
 }
 
 .a-la-française, .la-palette-du-gout {
-  height: 100%;
+  /*height: 100%;*/
 }
 
 .resto-la-note-enchantee {
@@ -604,7 +587,7 @@ nav {
 .menus {
   position: absolute;
   width: 100%;
-  top: 200px;
+  top: 60%;
   background-color: #F7F7F7;
   border-radius: 50px 50px 0 0;
   padding: 30px 20px;
@@ -744,12 +727,11 @@ nav {
     padding-bottom: 50px;
   }
   .image {
-    width: 30%;
-    height: 230px;
+    width: 100vw;
+    height: 100vh;
     align-items: flex-end;
   }
   .menus {
-    position: static;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -762,12 +744,13 @@ nav {
     display: flex;
     justify-content: space-between;
   }
-  .footer-restaurants, .footer-laNoteEnchantee {
-    position: static;
+  .footer-restaurants {
+    position: absolute;
+    top: 1100px;
   }
-  .mentions-restaurants {
-    display: flex;
-    justify-content: space-evenly;
+  .footer-laNoteEnchantee {
+    position: absolute;
+    top: 1200px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) { /* ********** Version Tablette *************** */
@@ -778,9 +761,13 @@ nav {
     width: 600px;
     margin: 0 auto;
   }
-  .mentions-restaurants {
-    display: flex;
-    justify-content: space-evenly;
+  .footer-restaurants {
+    position: absolute;
+    top: 1430px;
+  }
+  .footer-laNoteEnchantee {
+    position: absolute;
+    top: 1525px;
   }
 }
 
