@@ -386,7 +386,6 @@ nav {
   padding: 30px 20px;
 }
 .restaurants__fiche {
-  margin: 20px auto;
   max-width: 500px;
   background-color: #FFFFFF;
   border-radius: 20px;
@@ -525,14 +524,12 @@ nav {
   }
   .restos1 {
     display: flex;
+    border: 1px red solid;
     justify-content: space-evenly;
   }
   .restos2 {
     display: flex;
     justify-content: space-evenly;
-  }
-  .restaurants__fiche {
-    width: 40%;
   }
   .restaurants__fiche {
     width: 40%;

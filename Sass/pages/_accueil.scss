@@ -81,7 +81,7 @@
     background-color: $background;
     padding: 30px 20px;
     &__fiche{
-      margin: 20px auto;
+      
       max-width: 500px;
       background-color: $blanc;
       border-radius: 20px;
@@ -221,15 +221,12 @@
         flex-direction: column;
     }
     .restos1{
-        display: flex;
+        display: flex;border: 1px red solid;
         justify-content: space-evenly;
     }
     .restos2{
         display: flex;
         justify-content: space-evenly;
-    }
-    .restaurants__fiche{
-        width: 40%;
     }
     .restaurants{
         &__fiche{
