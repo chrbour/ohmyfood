@@ -358,7 +358,6 @@ nav {
   border-radius: 25px;
   position: relative;
 }
-
 .selection:hover {
   background: #F5EDFF;
   box-shadow: 2px 2px 5px #7E7E7E;
@@ -386,7 +385,7 @@ nav {
   padding: 30px 20px;
 }
 .restaurants__fiche {
-  max-width: 500px;
+  margin: 20px 0;
   background-color: #FFFFFF;
   border-radius: 20px;
   box-shadow: 2px 2px 5px #E9E9E9;
@@ -401,17 +400,14 @@ nav {
   border: 0;
   margin: 0;
   padding: 0;
-  height: 180px;
+  height: 200px;
 }
 .restaurants__image img {
   border-radius: 20px 20px 0 0;
-  object-position: 0 10%;
+  object-position: 0 60%;
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
-}
-.restaurants__image img.la-note-enchantee {
-  object-position: 0 50%;
 }
 .restaurants__image p {
   position: absolute;
@@ -558,27 +554,16 @@ nav {
 }
 
 .image {
-  height: 250px;
+  height: 400px;
   position: relative;
   overflow: hidden;
 }
 .image img {
-  position: absolute;
   width: 100%;
 }
-
-.a-la-française, .la-palette-du-gout {
-  /*height: 100%;*/
-}
-
-.resto-la-note-enchantee {
-  position: absolute;
-  top: -110px;
-}
-
-.resto-le-delice-des-sens {
-  position: absolute;
-  top: -20px;
+.image img.resto-la-note-enchantee {
+  object-position: 0 -100px;
+  height: unset;
 }
 
 .menus {
@@ -715,12 +700,12 @@ nav {
 
 .footer-restaurants {
   position: absolute;
-  top: 1430px;
+  top: 1530px;
 }
 
 .footer-laNoteEnchantee {
   position: absolute;
-  top: 1530px;
+  top: 1625px;
 }
 
 @media screen and (min-width: 992px) { /* ******************** Version Desktop **************** */
@@ -728,7 +713,6 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(to right, #7E7E7E, #FFFFFF, #7E7E7E);
   }
   .restaurants {
     padding-bottom: 50px;
@@ -738,7 +722,14 @@ nav {
     height: 100vh;
     align-items: flex-end;
   }
+  .image img {
+    object-position: 0 -350px;
+  }
+  .image img.resto-la-note-enchantee {
+    object-position: 0 -550px;
+  }
   .menus {
+    top: 40%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -753,17 +744,14 @@ nav {
   }
   .footer-restaurants {
     position: absolute;
-    top: 1100px;
+    top: 965px;
   }
   .footer-laNoteEnchantee {
     position: absolute;
-    top: 1200px;
+    top: 1060px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) { /* ********** Version Tablette *************** */
-  body {
-    background: linear-gradient(to right, #7E7E7E, #FFFFFF, #7E7E7E);
-  }
   .main-restaurants {
     width: 600px;
     margin: 0 auto;

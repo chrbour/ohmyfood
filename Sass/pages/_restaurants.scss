@@ -1,139 +1,189 @@
 /* ***************************** Import Page des différents Restaurants ********************* */
 .header-restaurants, .footer-restaurants, .footer-laNoteEnchantee{
     animation: apparitionProgressive $tpsApparitionProgressive;
-  }
-  .main-restaurants{
-    display:flex;
-    flex-direction: column;
-    position: relative;
-    animation: apparitionProgressive $tpsApparitionProgressive;
-  }
-  .image{
-    height: 250px;
-    position: relative;
-    overflow: hidden;
-    & img{
-      position: absolute;
-      width: 100%;
+}
+.main-restaurants{
+  display:flex;
+  flex-direction: column;
+  position: relative;
+  animation: apparitionProgressive $tpsApparitionProgressive;
+}
+.image{
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  img{
+    
+    width: 100%;
+    &.resto-la-note-enchantee{
+      object-position: 0 -100px;
+      height: unset;
+      
     }
   }
-  .a-la-française, .la-palette-du-gout{
-    /*height: 100%;*/
+}
+.menus{
+  position: absolute;
+  width:100%;
+  top: 60%;
+  background-color: $background;
+  border-radius: 50px 50px 0 0;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  & h1{
+      font-family: 'Shrikhand', cursive;
+      font-size: 28px;
+      font-weight: 300;
+      margin: 0;
+      
+    }
+    & h2{
+      font-size: 18px;
+      font-weight: 400;
+      height: 22px;
+      width: 45px;
+      margin: 30px 0 10px;
+      border-bottom: 5px solid $tertiaryColor;
+    }
+    & h3{
+      font-size: 1.15rem;
+      padding: 0;
+      margin: 10px 10px 5px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  &__nom{
+    display: flex;
+    justify-content: space-between;
+    padding-right:20px;
   }
-  .resto-la-note-enchantee{
-    position: absolute;
-    top: -110px;
-  }
-  .resto-le-delice-des-sens{
-    position: absolute;
-    top: -20px;
-  }
-  .menus{
-    position: absolute;
-    width:100%;
-    top: 60%;
-    background-color: $background;
-    border-radius: 50px 50px 0 0;
-    padding: 30px 20px;
-    box-sizing: border-box;
-    & h1{
-        font-family: 'Shrikhand', cursive;
-        font-size: 28px;
-        font-weight: 300;
-        margin: 0;
+  &__element{
+    display: flex;
+    background-color: $blanc;
+    border-radius: 20px;
+    margin-bottom: 20px;   
+    box-shadow: 0 0 12px $ombre;
+    @for $i from 1 to 11{
+      &.element#{$i}{
+        animation: apparitionProgressive 0.5s $i*0.2s both, montee 0.5s $i*0.2s both;
         
       }
-      & h2{
-        font-size: 18px;
-        font-weight: 400;
-        height: 22px;
-        width: 45px;
-        margin: 30px 0 10px;
-        border-bottom: 5px solid $tertiaryColor;
-      }
-      & h3{
-        font-size: 1.15rem;
-        padding: 0;
-        margin: 10px 10px 5px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-    &__nom{
-      display: flex;
-      justify-content: space-between;
-      padding-right:20px;
     }
-    &__element{
-      display: flex;
-      background-color: $blanc;
-      border-radius: 20px;
-      margin-bottom: 20px;   
-      box-shadow: 0 0 12px $ombre;
-      @for $i from 1 to 11{
-        &.element#{$i}{
-          animation: apparitionProgressive 0.5s $i*0.2s both, montee 0.5s $i*0.2s both;
-          
+    &:hover{
+      cursor: pointer;
+      .element__name{
+        display:flex;
+        width: 80%;
+      }
+      .element__validation{
+        width: 20%;
+        i{
+          animation: rotation 0.5s backwards;
         }
-      }
-      &:hover{
-        cursor: pointer;
-        .element__name{
-          display:flex;
-          width: 80%;
-        }
-        .element__validation{
-          width: 20%;
-          i{
-            animation: rotation 0.5s backwards;
-          }
-        }
-      }
-    }
-    .btn{
-      margin: 40px auto 20px;
-      width: 150px;
-      text-align: center;
-    }
-  }
-  .element{
-    &__name{
-      width: 100%;
-      display: flex;
-      padding: 5px 5px 0;
-      flex-direction: column;
-      box-sizing: border-box;
-      transition: width 0.5s;
-    }
-    &__detail{
-      display: flex;
-      justify-content: space-between;
-    }
-    &__validation{
-      border-radius: 0 20px 20px 0;
-      display: flex;
-      font-size: 25px;
-      width: 0%;
-      transition: width 0.5s;
-      background-color: $tertiaryColor;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      i{
-        color: $blanc;
       }
     }
   }
-  .intitule{
-    text-overflow: ellipsis;
+  .btn{
+    margin: 40px auto 20px;
+    width: 150px;
+    text-align: center;
+  }
+}
+.element{
+  &__name{
+    width: 100%;
+    display: flex;
+    padding: 5px 5px 0;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: width 0.5s;
+  }
+  &__detail{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__validation{
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    font-size: 25px;
+    width: 0%;
+    transition: width 0.5s;
+    background-color: $tertiaryColor;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    white-space: nowrap;
-    font-weight: 400;
-    margin: 0 10px 10px;
+    i{
+      color: $blanc;
+    }
   }
-  .prix{
-    padding: 0;
-    margin: 0 10px;
+}
+.intitule{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 400;
+  margin: 0 10px 10px;
+}
+.prix{
+  padding: 0;
+  margin: 0 10px;
+}
+.footer-restaurants{
+  position: absolute;
+  top: 1530px;
+}
+.footer-laNoteEnchantee{
+  position: absolute;
+  top: 1625px;
+}
+@media screen and (min-width: 992px){             /* ******************** Version Desktop **************** */
+  .main-restaurants{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .restaurants{
+    padding-bottom: 50px;
+  }
+  .image{
+    width: 100vw;
+    height: 100vh;
+    align-items: flex-end;
+    img{
+      object-position: 0 -350px;
+      &.resto-la-note-enchantee{
+        object-position: 0 -550px;
+      }
+    }
+  }
+  .menus{
+    top:40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .menus__entrees, .menus__plats, .menus__desserts{
+    margin: 0 5px;
+    width: 32%;
+  }
+  .repas{
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-restaurants{
+    position: absolute;
+    top: 965px;
+  }
+  .footer-laNoteEnchantee{
+    position: absolute;
+    top: 1060px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px){  /* ********** Version Tablette *************** */
+  .main-restaurants{
+    width: 600px;
+    margin: 0 auto;
   }
   .footer-restaurants{
     position: absolute;
@@ -141,59 +191,6 @@
   }
   .footer-laNoteEnchantee{
     position: absolute;
-    top: 1530px;
+    top: 1525px;
   }
-  @media screen and (min-width: 992px){             /* ******************** Version Desktop **************** */
-    .main-restaurants{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: linear-gradient(to right, $gris, $blanc, $gris);
-    }
-    .restaurants{
-      padding-bottom: 50px;
-    }
-    .image{
-      width: 100vw;
-      height: 100vh;
-      align-items: flex-end;
-    }
-    .menus{
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    .menus__entrees, .menus__plats, .menus__desserts{
-      margin: 0 5px;
-      width: 32%;
-    }
-    .repas{
-      display: flex;
-      justify-content: space-between;
-    }
-    .footer-restaurants{
-      position: absolute;
-      top: 1100px;
-    }
-    .footer-laNoteEnchantee{
-      position: absolute;
-      top: 1200px;
-    }
-  }
-  @media screen and (min-width: 768px) and (max-width: 991px){  /* ********** Version Tablette *************** */
-    
-    body{
-      background: linear-gradient(to right, $gris, $blanc, $gris);
-    }.main-restaurants{
-      width: 600px;
-      margin: 0 auto;
-    }
-    .footer-restaurants{
-      position: absolute;
-      top: 1430px;
-    }
-    .footer-laNoteEnchantee{
-      position: absolute;
-      top: 1525px;
-    }
-  }
+}
