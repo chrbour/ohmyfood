@@ -358,6 +358,7 @@ nav {
   border-radius: 25px;
   position: relative;
 }
+
 .selection:hover {
   background: #F5EDFF;
   box-shadow: 2px 2px 5px #7E7E7E;
