@@ -236,10 +236,10 @@ footer a {
 }
 @keyframes apparitionProgressive {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 /* ************************************ Import header.scss ************************ */
@@ -250,15 +250,15 @@ header {
 }
 
 .entete__logo {
-  height: 30px;
+  height: 35px;
   margin: 30px auto 20px;
 }
 
 .fa-arrow-left {
   position: absolute;
   top: 40%;
-  left: 40px;
-  font-size: 22px;
+  left: 25px;
+  font-size: 25px;
   font-weight: 900;
   transform: scale(1);
   transition: transform 0.3s;
@@ -274,7 +274,6 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 30px 30px;
-  width: 100%;
 }
 footer h2 {
   font-family: "Shrikhand", cursive;
@@ -383,7 +382,7 @@ nav {
 
 .restaurants {
   background-color: #F7F7F7;
-  padding: 30px 20px;
+  padding: 30px 20px 40px;
 }
 .restaurants__fiche {
   margin: 20px 0;
@@ -549,27 +548,27 @@ nav {
 .main-restaurants {
   display: flex;
   flex-direction: column;
-  position: relative;
+  /*position: relative;*/
   animation: apparitionProgressive 2s;
 }
 
 .image {
-  height: 400px;
-  position: relative;
+  height: 300px;
+  /*position: relative;*/
   overflow: hidden;
 }
 .image img {
   width: 100%;
+  object-fit: cover;
 }
 .image img.resto-la-note-enchantee {
-  object-position: 0 -100px;
-  height: unset;
+  object-position: 0 -110px;
 }
 
 .menus {
-  position: absolute;
-  width: 100%;
-  top: 60%;
+  /*position: relative;*/
+  /*width:100%;*/
+  margin-top: -50px;
   background-color: #F7F7F7;
   border-radius: 50px 50px 0 0;
   padding: 30px 20px;
@@ -698,35 +697,20 @@ nav {
   margin: 0 10px;
 }
 
-.footer-restaurants {
-  position: absolute;
-  top: 1530px;
-}
-
-.footer-laNoteEnchantee {
-  position: absolute;
-  top: 1625px;
-}
-
 @media screen and (min-width: 992px) { /* ******************** Version Desktop **************** */
-  .main-restaurants {
+  /*.main-restaurants{
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .restaurants {
-    padding-bottom: 50px;
-  }
+  }*/
   .image {
-    width: 100vw;
-    height: 100vh;
-    align-items: flex-end;
+    height: 400px;
   }
   .image img {
-    object-position: 0 -350px;
+    object-position: 0 -250px;
   }
   .image img.resto-la-note-enchantee {
-    object-position: 0 -550px;
+    object-position: 0 -450px;
   }
   .menus {
     top: 40%;
@@ -742,27 +726,36 @@ nav {
     display: flex;
     justify-content: space-between;
   }
-  .footer-restaurants {
+  /*.footer-restaurants{
     position: absolute;
     top: 940px;
   }
-  .footer-laNoteEnchantee {
+  .footer-laNoteEnchantee{
     position: absolute;
     top: 1060px;
-  }
+  }*/
 }
 @media screen and (min-width: 768px) and (max-width: 991px) { /* ********** Version Tablette *************** */
+  .image {
+    height: 400px;
+  }
   .image img {
+    object-position: 0 -100px;
+  }
+  .image img.resto-la-note-enchantee {
+    object-position: 0 -450px;
+  }
+  /*.image img{
     object-position: 0 -200px;
-  }
-  .footer-restaurants {
-    position: absolute;
-    top: 1520px;
-  }
-  .footer-laNoteEnchantee {
-    position: absolute;
-    top: 1625px;
-  }
+  }*/
+  /*.footer-restaurants{
+     position: absolute;
+     top: 1520px;
+   }
+   .footer-laNoteEnchantee{
+     position: absolute;
+     top: 60%;
+   }*/
 }
 
 /*# sourceMappingURL=style.css.map */
