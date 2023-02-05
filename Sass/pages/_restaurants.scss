@@ -5,29 +5,25 @@
 .main-restaurants{
   display:flex;
   flex-direction: column;
-  /*position: relative;*/
   animation: apparitionProgressive $tpsApparitionProgressive;
 }
 .image{
-  height: 300px;
-  /*position: relative;*/
-  overflow: hidden;
   img{
-    width: 100%; 
+    width: 100%;
     object-fit:cover;
     &.resto-la-note-enchantee{
-      object-position: 0 -110px;
+      height: 100%;
     }
   }
+  &.image-note-enchantee{
+  height:400px;
+}
 }
 .menus{
-  /*position: relative;*/
-  /*width:100%;*/
   margin-top: -50px;
   background-color: $background;
   border-radius: 50px 50px 0 0;
   padding: 30px 20px;
-  box-sizing: border-box;
   & h1{
       font-family: 'Shrikhand', cursive;
       font-size: 28px;
@@ -126,11 +122,6 @@
   margin: 0 10px;
 }
 @media screen and (min-width: 992px){             /* ******************** Version Desktop **************** */
-  /*.main-restaurants{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }*/
   .image{
     height: 400px;
     img{
@@ -141,8 +132,6 @@
     }
   }
   .menus{
-    top:40%;
-    width: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -154,34 +143,15 @@
     display: flex;
     justify-content: space-between;
   }
-  /*.footer-restaurants{
-    position: absolute;
-    top: 940px;
-  }
-  .footer-laNoteEnchantee{
-    position: absolute;
-    top: 1060px;
-  }*/
 }
 @media screen and (min-width: 768px) and (max-width: 991px){  /* ********** Version Tablette *************** */
   .image{
     height: 400px;
     img{
-      object-position: 0 -100px;
+      object-position: 0 -0px;
       &.resto-la-note-enchantee{
         object-position: 0 -450px;
       }
     }
   }
-  /*.image img{
-    object-position: 0 -200px;
-  }*/
- /*.footer-restaurants{
-    position: absolute;
-    top: 1520px;
-  }
-  .footer-laNoteEnchantee{
-    position: absolute;
-    top: 60%;
-  }*/
 }
